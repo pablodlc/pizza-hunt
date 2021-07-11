@@ -7,9 +7,9 @@ const getPizzaList = () => {
       pizzaListArr.forEach(printPizza);
     })
     .catch(err => {
-      console.log(err)
-    })
-}
+      console.log(err);
+    });
+};
 
 const printPizza = ({ _id, pizzaName, toppings, size, commentCount, createdBy, createdAt }) => {
   const pizzaCard = `
@@ -24,10 +24,10 @@ const printPizza = ({ _id, pizzaName, toppings, size, commentCount, createdBy, c
           <h5 class="text-dark">Toppings</h5>
           <ul>
             ${toppings
-      .map(topping => {
-        return `<li>${topping}</li>`;
-      })
-      .join('')}
+              .map(topping => {
+                return `<li>${topping}</li>`;
+              })
+              .join('')}
           </ul>
           <a class="btn display-block w-100 mt-auto" href="/pizza?id=${_id}">See the discussion.</a>
         </div>
